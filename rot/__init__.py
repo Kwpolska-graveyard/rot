@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
-# River v0.1.0
+# River of Text v0.1.0
 # INSERT TAGLINE HERE.
 # Copyright © 2013, Kwpolska.
 # All rights reserved.
@@ -34,7 +34,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 """
-    river
+    rot
     ~~~~~
 
     INSERT TAGLINE HERE.
@@ -43,7 +43,7 @@
     :License: BSD (see /LICENSE).
 """
 
-__title__ = 'River'
+__title__ = 'River of Text'
 __version__ = '0.1.0'
 __author__ = 'Kwpolska'
 __license__ = '3-clause BSD'

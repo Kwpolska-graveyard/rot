@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# River documentation build configuration file, created by
+# River of Text documentation build configuration file, created by
 # sphinx-quickstart on Fri Dec 14 21:02:58 2012.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'River'
+project = u'River of Text'
 copyright = u'2013, Kwpolska'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -164,7 +164,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Riverdoc'
+htmlhelp_basename = 'Rotdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -178,7 +178,7 @@ htmlhelp_basename = 'Riverdoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'River.tex', u'TEMPLATE Documentation',
+  ('index', 'rot.tex', u'River of Text Documentation',
    u'Kwpolska', 'manual'),
 ]
 
@@ -214,7 +214,7 @@ latex_elements = {'papersize': 'a4paper', 'fontpkg': '\\usepackage{tgheros}',
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'river', u'River Documentation',
+    ('index', 'rot', u'River of Text Documentation',
      [u'Kwpolska'], 1)
 ]
 

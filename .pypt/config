@@ -2,7 +2,7 @@
 # Human-friendly project name.
 PROJECT="River"
 # Computer-friendly project name, [a-z0-9_\-]
-PROJECTLC="river"
+PROJECTLC="rot"
 
 # Git repository name.  Using $PROJECTLC is recommended.
 GITREPO=$PROJECTLC

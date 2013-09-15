@@ -1,6 +1,6 @@
 # Maintainer: Kwpolska <kwpolska@kwpolska.tk>
-pkgname=python-river
-_pyname=river
+pkgname=python-rot
+_pyname=rot
 pkgver=0.1.0
 pkgrel=1
 pkgdesc='INSERT TAGLINE HERE.'

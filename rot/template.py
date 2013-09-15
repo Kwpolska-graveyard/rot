@@ -1,12 +1,12 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
-# River v0.1.0
+# River of Text v0.1.0
 # INSERT TAGLINE HERE.
 # Copyright © 2013, Kwpolska.
 # See /LICENSE for licensing information.
 
 """
-    river.template
+    rot.template
     ~~~~~~~~~~~~~~
 
     INSERT MODULE DESCRIPTION HERE.

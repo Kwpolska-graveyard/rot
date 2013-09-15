@@ -1,13 +1,13 @@
 ============================
-River.  INSERT TAGLINE HERE.
+River of Text of Text.  INSERT TAGLINE HERE.
 ============================
-:Info: This is the README file for the River.
+:Info: This is the README file for the River of Text of Text.
 :Author: Kwpolska <kwpolska@kwpolska.tk>
 :Date: 2013-01-20
 :Version: 0.1.0
 
 .. index: README
-.. image:: https://travis-ci.org/Kwpolska/river.png?branch=master
+.. image:: https://travis-ci.org/Kwpolska/rot.png?branch=master
 
 What is this?
 -------------

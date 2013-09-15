@@ -1,7 +1,7 @@
 =====================
 Appendix C. Changelog
 =====================
-:Info: This is the changelog for River.
+:Info: This is the changelog for River of Text.
 :Author: Kwpolska <kwpolska@kwpolska.tk>
 :Copyright: © 2013, Kwpolska.
 :License: BSD (see /LICENSE or :doc:`Appendix B <LICENSE>`.)
@@ -14,7 +14,7 @@ GitHub holds releases, too
 ==========================
 
 More information can be found on GitHub in the `releases section
-<https://github.com/Kwpolska/river/releases>`_.
+<https://github.com/Kwpolska/rot/releases>`_.
 
 Version History
 ===============

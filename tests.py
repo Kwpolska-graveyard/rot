@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
-# River test suite
+# River of Text test suite
 # Copyright © 2013, Kwpolska.
 # All rights reserved.
 #
@@ -32,12 +32,12 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import river
-import river.template
+import rot
+import rot.template
 import unittest
 
 
-class TestRiver(unittest.TestCase):
+class TestRoT(unittest.TestCase):
     def test_true(self):
         self.assertTrue(True)
 

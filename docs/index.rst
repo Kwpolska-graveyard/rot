@@ -1,10 +1,10 @@
-River
+River of Text
 ========
 
 .. toctree::
    :maxdepth: 2
 
-   README for River <README>
+   README for River of Text <README>
    CONTRIBUTING
    LICENSE
    CHANGELOG

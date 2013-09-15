@@ -1,6 +1,6 @@
 # Maintainer: Kwpolska <kwpolska@kwpolska.tk>
-pkgname=python-river-git
-_pyname=river
+pkgname=python-rot-git
+_pyname=rot
 pkgver=20130109
 pkgrel=1
 pkgdesc='INSERT TAGLINE HERE.  (git version)'
@@ -10,11 +10,11 @@ license=('???')
 depends=('python')
 makedepends=('git')
 options=(!emptydirs)
-provides=('python-river')
-conflicts=('python-river')
+provides=('python-rot')
+conflicts=('python-rot')
 
-_gitroot=git://github.com/AUTHOR/river.git
-_gitname=river
+_gitroot=git://github.com/AUTHOR/rot.git
+_gitname=rot
 
 pkgver() {
   cd "${srcdir}/${_gitname}"
