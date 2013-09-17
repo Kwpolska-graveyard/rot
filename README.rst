@@ -1,7 +1,7 @@
-============================
-River of Text of Text.  INSERT TAGLINE HERE.
-============================
-:Info: This is the README file for the River of Text of Text.
+====================================
+River of Text.  INSERT TAGLINE HERE.
+====================================
+:Info: This is the README file for the River of Text.
 :Author: Kwpolska <kwpolska@kwpolska.tk>
 :Date: 2013-01-20
 :Version: 0.1.0
@@ -17,7 +17,7 @@ human-friendly.  Originally pkgbuilder.ui.
 
 COPYRIGHT
 ---------
-Copyright © 2011-2013, Kwpolska.
+Copyright © 2013, Kwpolska.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
