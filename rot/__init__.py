@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 # River of Text v0.1.0
 # INSERT TAGLINE HERE.
@@ -35,7 +35,7 @@
 
 """
     rot
-    ~~~~~
+    ~~~
 
     INSERT TAGLINE HERE.
 

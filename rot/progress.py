@@ -1,48 +1,63 @@
-#!/usr/bin/python3
 # -*- encoding: utf-8 -*-
-# PKGBUILDer v3.1.5
-# An AUR helper (and library) in Python 3.
-# Copyright © 2011-2013, Kwpolska.
+# River of Text v0.1.0
+# INSERT TAGLINE HERE.
+# Copyright © 2013, Kwpolska.
 # See /LICENSE for licensing information.
 
 """
-    pkgbuilder.ui
-    ~~~~~~~~~~~~~
+    rot.progress
+    ~~~~~~~~~~~~
 
-    The User Interface.
+    Progress indicators.
 
-    :Copyright: © 2011-2013, Kwpolska.
+    :Copyright: © 2013, Kwpolska.
     :License: BSD (see /LICENSE).
 """
 
 import sys
 import time
-import threading
+from rot import throbber
 
-__all__ = ['Progress', 'Throbber', 'ProgressThrobber']
+__all__ = ['FrontProgress', 'FrontProgressThrobber']
 
 
-class Progress(object):
+class FrontProgress(object):
     """A static progress indicator with numbers.
 
     Usage::
 
         pm = Progress(total=2)
-        pm.msg('Doing step 1...')
+        pm.step('Doing step 1...')
         step1()
-        pm.msg('Doing step 2...')
+        pm.step('Doing step 2...')
         step2()
+        pm.step()
+
+    Or (with static message)::
+
+        pm = Progress(total=2, message='Performing an action...')
+        pm.step()
+        step1()
+        pm.step()
+        step2()
+        pm.step()
+
     """
     current = 0
     total = 1
     _pml = 0
 
-    def __init__(self, total=1):
+    def __init__(self, total=1, msg=None):
         """Initialize a Progress message."""
         self.total = total
+        self.msg = msg
 
-    def msg(self, msg, single=False):
+    def step(self, msg=None, single=False):
         """Print a progress message."""
+        if msg is None:
+            msg = self.msg
+        else:
+            self.msg = msg
         self.current += 1
         ln = len(str(self.total))
         sys.stdout.write('\r' + ((ln * 2 + 4 + self._pml) * ' '))
@@ -61,64 +76,7 @@ class Progress(object):
             self.current = 0
 
 
-class Throbber(object):
-    """A nice animated throbber.
-
-    Usage::
-
-        with Throbber('Doing important stuff...'):
-            dostuff()
-    """
-    throb = False
-    states = ('|', '/', '-', '\\')
-    _tt = None
-
-    def __init__(self, msg, finalthrob='*', printback=True):
-        """Initialize."""
-        self.msg = msg
-        self.finalthrob = finalthrob
-        self.printback = printback
-
-    def __enter__(self):
-        """Run the throbber in a thread."""
-        self._tt = threading.Thread(target=self._throb, args=(
-            self.msg, self.finalthrob, self.printback))
-        self._tt.start()
-        return self
-
-    def __exit__(self, *args, **kwargs):
-        """Clean stuff up."""
-        self.throb = False
-        while self.throbber_alive:
-            time.sleep(0.1)
-
-    def _throb(self, msg, finalthrob='*', printback=True):
-        """Display a throbber."""
-        self.throb = True
-        i = 0
-        while self.throb:
-            sys.stdout.write('\r({0}) {1}'.format(self.states[i], self.msg))
-            sys.stdout.flush()
-            time.sleep(0.1)
-            i += 1
-            if i == len(self.states):
-                i = 0
-        if not self.throb and self.printback:
-            sys.stdout.write('\r({0}) {1}'.format(self.finalthrob, self.msg))
-            sys.stdout.flush()
-            time.sleep(0.1)
-            print()
-
-    @property
-    def throbber_alive(self):
-        """Check the status of a throbber."""
-        if self._tt:
-            return self._tt.is_alive()
-        else:
-            return False
-
-
-class ProgressThrobber(Progress, Throbber):
+class FrontProgressThrobber(FrontProgress, throbber.Throbber):
     """An animated progress throbber.
 
     Similar to Progress, but the / is animated.

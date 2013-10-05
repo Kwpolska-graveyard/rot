@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- encoding: utf-8 -*-
 # River of Text v0.1.0
 # INSERT TAGLINE HERE.
@@ -7,7 +6,7 @@
 
 """
     rot.template
-    ~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~
 
     INSERT MODULE DESCRIPTION HERE.
 
