@@ -26,23 +26,23 @@ class Throbber(object):
 
     Usage::
 
-        with Throbber('Doing important stuff...'):
+        with Throbber(u'Doing important stuff...'):
             dostuff()
     """
     throb = False
     states = ('|', '/', '-', '\\')
     _tt = None
 
-    def __init__(self, msg, finalthrob='+', printback=True):
+    def __init__(self, msg='Working...', finalthrob='+',
+                 end_with_newline=True):
         """Initialize."""
         self.msg = msg
         self.finalthrob = finalthrob
-        self.printback = printback
+        self.end_with_newline = end_with_newline
 
     def __enter__(self):
         """Run the throbber in a thread."""
-        self._tt = threading.Thread(target=self._throb, args=(
-            self.msg, self.finalthrob, self.printback))
+        self._tt = threading.Thread(target=self._throb)
         self._tt.start()
         return self
 
@@ -52,22 +52,23 @@ class Throbber(object):
         while self.throbber_alive:
             time.sleep(0.1)
 
-    def _throb(self, msg, finalthrob='*', printback=True):
+    def _throb(self):
         """Display a throbber."""
         self.throb = True
         i = 0
         while self.throb:
-            sys.stdout.write('\r({0}) {1}'.format(self.states[i], self.msg))
+            sys.stdout.write(u'\r({0}) {1}'.format(self.states[i], self.msg))
             sys.stdout.flush()
             time.sleep(0.1)
             i += 1
             if i == len(self.states):
                 i = 0
-        if not self.throb and self.printback:
-            sys.stdout.write('\r({0}) {1}'.format(self.finalthrob, self.msg))
+        if not self.throb and self.end_with_newline:
+            sys.stdout.write(u'\r({0}) {1}'.format(self.finalthrob, self.msg))
             sys.stdout.flush()
             time.sleep(0.1)
-            print()
+            sys.stdout.write(u'\n')
+            sys.stdout.flush()
 
     @property
     def throbber_alive(self):
