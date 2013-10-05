@@ -18,8 +18,6 @@ import sys
 import time
 import threading
 
-from rot.progress import FrontProgressThrobber
-
 __all__ = ['Throbber']
 
 
@@ -35,7 +33,7 @@ class Throbber(object):
     states = ('|', '/', '-', '\\')
     _tt = None
 
-    def __init__(self, msg, finalthrob='*', printback=True):
+    def __init__(self, msg, finalthrob='+', printback=True):
         """Initialize."""
         self.msg = msg
         self.finalthrob = finalthrob

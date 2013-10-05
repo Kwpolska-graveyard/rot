@@ -26,33 +26,33 @@ class FrontProgress(object):
 
     Usage::
 
-        pm = Progress(total=2)
-        pm.step('Doing step 1...')
+        fp = Progress(2, 'Doing step 1...')
         step1()
-        pm.step('Doing step 2...')
+        fp.step('Doing step 2...')
         step2()
-        pm.step()
+        fp.step()
 
     Or (with static message)::
 
-        pm = Progress(total=2, message='Performing an action...')
-        pm.step()
+        fp = Progress(2, 'Performing an action...')
         step1()
-        pm.step()
+        fp.step()
         step2()
-        pm.step()
+        fp.step()
 
     """
-    current = 0
+    current = -1
     total = 1
     _pml = 0
 
-    def __init__(self, total=1, msg=None):
+    def __init__(self, total, msg='Working...', end_with_newline=True):
         """Initialize a Progress message."""
         self.total = total
         self.msg = msg
+        self.end_with_newline = end_with_newline
+        self.step(msg)
 
-    def step(self, msg=None, single=False):
+    def step(self, msg=None, newline=False):
         """Print a progress message."""
         if msg is None:
             msg = self.msg
@@ -69,9 +69,11 @@ class FrontProgress(object):
         sys.stdout.write(msg)
         sys.stdout.write('\r')
         sys.stdout.flush()
-        if single:
+        if newline:
             print()
         if self.current == self.total:
+            if self.end_with_newline:
+                print()
             self.total = 0
             self.current = 0
 
@@ -83,19 +85,19 @@ class FrontProgressThrobber(FrontProgress, throbber.Throbber):
 
     Usage::
 
-        with ProgressThrobber('Working...', total=2) as pt:
+        with ProgressThrobber(2, 'Doing stuff...') as pt:
             dostuff()
-            pt.bump('Cleaning up...')
+            pt.step('Cleaning up...')
             cleanup()
     """
-    current = 0
-    finalthrob = '/'
     printback = True
 
-    def __init__(self, msg, total=1):
+    def __init__(self, total, msg='Working...', finalthrob='/', end_with_newline=True):
         self.total = total
+        self.msg = msg
+        self.finalthrob = finalthrob
         self.ln = len(str(self.total))
-        self.bump(msg)
+        self.step(msg)
 
     def _throb(self, msg, finalthrob='/', printback=True):
         """Display a throbber."""
@@ -121,7 +123,9 @@ class FrontProgressThrobber(FrontProgress, throbber.Throbber):
         if self.printback:
             print()
 
-    def bump(self, msg):
+    def step(self, msg=None):
+        if msg is None:
+            msg = self.msg
         sys.stdout.write('\r' + ((self.ln * 2 + 4 + self._pml) * ' '))
         self._pml = len(msg)
         self.current += 1
