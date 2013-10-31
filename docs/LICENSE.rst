@@ -2,7 +2,7 @@
 Appendix B. License for River of Text
 ================================
 :Info: This is the license for River of Text.
-:Author: Kwpolska <kwpolska@kwpolska.tk>
+:Author: Chris “Kwpolska” Warrick <kwpolska@kwpolska.tk>
 :Date: 2013-01-20
 :Version: 0.1.0
 
