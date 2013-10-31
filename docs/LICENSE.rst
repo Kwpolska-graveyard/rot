@@ -8,7 +8,7 @@ Appendix B. License for River of Text
 
 .. index:: LICENSE
 
-Copyright © 2013, Kwpolska.
+Copyright © 2013, Chris “Kwpolska” Warrick.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

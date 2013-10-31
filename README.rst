@@ -17,7 +17,7 @@ human-friendly.  Originally pkgbuilder.ui.
 
 COPYRIGHT
 ---------
-Copyright © 2013, Kwpolska.
+Copyright © 2013, Chris “Kwpolska” Warrick.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
